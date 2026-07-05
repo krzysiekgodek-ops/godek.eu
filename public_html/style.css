@@ -182,6 +182,15 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
   margin-bottom: 0.4rem;
 }
 .tile__desc { color: var(--text-muted); }
+.tile__more {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  color: var(--accent);
+  transition: transform 0.25s var(--ease);
+}
+.tile--leather:hover .tile__more { transform: translateX(4px); }
 .tile h2 { font-size: clamp(1.2rem, 2vw, 1.5rem); margin-bottom: 0.5rem; }
 
 /* ---------- 1. Intro ---------- */
