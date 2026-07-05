@@ -1,0 +1,21 @@
+# System
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Edytor
+.vscode/
+*.code-workspace
+
+# Sekrety — NIGDY nie commituj!
+.env
+secret/
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+
+# Logi / tymczasowe
+*.log
+*.tmp

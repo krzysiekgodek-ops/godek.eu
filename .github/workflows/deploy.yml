@@ -1,0 +1,26 @@
+name: Deploy to MyDevil
+
+# Uruchamia się automatycznie po każdym push na gałąź main
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # pozwala też odpalić ręcznie z zakładki Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie repozytorium
+        uses: actions/checkout@v4
+
+      - name: Wgrywanie strony przez SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASS }}
+          port: 22
+          local_path: './public_html/*'
+          remote_path: '/usr/home/Pluszek/domains/godek.eu/public_html'
+          sftp_only: true
