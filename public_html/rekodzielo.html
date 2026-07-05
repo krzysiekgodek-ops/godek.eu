@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Pracownia skórzana Godek — ręcznie szyte kabury, breloczki i okładki na notatniki. Skóra licowa, formowana i barwiona ręcznie." />
+  <meta name="description" content="Pracownia skórzana Godek — ręcznie szyte kabury, portfele, breloczki i okładki na notatniki. Skóra licowa, formowana i barwiona ręcznie." />
   <meta name="theme-color" content="#1a120b" />
   <title>Pracownia Skórzana — Godek</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="rekodzielo.css" />
 </head>
 <body>
+
+  <!-- Tło pracowni -->
+  <div class="bg" aria-hidden="true"></div>
 
   <!-- Powrót — skórzana zawieszka -->
   <a class="back-tag" href="index.html" aria-label="Powrót na stronę główną">
@@ -26,67 +29,54 @@
       <h1>Pracownia Skórzana</h1>
       <p class="atelier__lead">
         Każdy przedmiot powstaje ręcznie — z naturalnej skóry licowej, formowanej na mokro,
-        szytej dratwą i barwionej z ręki. Bez maszyn, bez pośpiechu.
+        szytej dratwą i barwionej z ręki. Kliknij zdjęcie, aby powiększyć.
       </p>
     </header>
 
-    <section class="gallery" aria-label="Kategorie wyrobów skórzanych">
-
-      <!-- KABURY — kafelek główny -->
-      <article class="card card--hero" data-cat="kabury" data-count="15" tabindex="0" role="button"
-               aria-label="Kabury — otwórz galerię (15 zdjęć)">
-        <div class="card__media" style="background-image:url('img/skora/kabury/01.webp')"></div>
-        <div class="card__overlay"></div>
-        <div class="card__content">
-          <span class="card__count">15 zdjęć</span>
-          <h2>Kabury</h2>
-          <p class="card__desc">Ręcznie szyte kabury na broń — formowane na mokro, dopasowane do modelu.</p>
-          <span class="card__cta">Zobacz galerię →</span>
-        </div>
-      </article>
-
-      <!-- BRELOCZKI -->
-      <article class="card" data-cat="breloczki" data-count="7" tabindex="0" role="button"
-               aria-label="Breloczki — otwórz galerię (7 zdjęć)">
-        <div class="card__media" style="background-image:url('img/skora/breloczki/01.webp')"></div>
-        <div class="card__overlay"></div>
-        <div class="card__content">
-          <span class="card__count">7 zdjęć</span>
-          <h2>Breloczki</h2>
-          <p class="card__desc">Skórzane drobiazgi z charakterem — na klucze i nie tylko.</p>
-          <span class="card__cta">Zobacz galerię →</span>
-        </div>
-      </article>
-
-      <!-- PORTFELE — wkrótce -->
-      <article class="card card--soon" aria-label="Portfele — wkrótce">
-        <div class="card__overlay"></div>
-        <div class="card__content">
-          <span class="card__count">w przygotowaniu</span>
-          <h2>Portfele</h2>
-          <p class="card__desc">Portfele i etui — galeria już wkrótce.</p>
-          <span class="card__cta card__cta--muted">Wkrótce</span>
-        </div>
-      </article>
-
-      <!-- NOTATNIKI -->
-      <article class="card" data-cat="notatniki" data-count="9" tabindex="0" role="button"
-               aria-label="Notatniki — otwórz galerię (9 zdjęć)">
-        <div class="card__media" style="background-image:url('img/skora/notatniki/01.webp')"></div>
-        <div class="card__overlay"></div>
-        <div class="card__content">
-          <span class="card__count">9 zdjęć</span>
-          <h2>Notatniki</h2>
-          <p class="card__desc">Okładki na notatniki — szyte i barwione ręcznie.</p>
-          <span class="card__cta">Zobacz galerię →</span>
-        </div>
-      </article>
-
+    <!-- KABURY -->
+    <section class="cat">
+      <div class="cat__head">
+        <h2>Kabury</h2>
+        <span class="cat__count">15 zdjęć</span>
+      </div>
+      <p class="cat__desc">Ręcznie szyte kabury na broń — formowane na mokro, dopasowane do modelu.</p>
+      <div class="thumbs" data-cat="kabury" data-count="15" data-label="Kabura"></div>
     </section>
+
+    <!-- PORTFELE -->
+    <section class="cat">
+      <div class="cat__head">
+        <h2>Portfele</h2>
+        <span class="cat__count">11 zdjęć</span>
+      </div>
+      <p class="cat__desc">Portfele i etui — skóra licowa, szyte dratwą i barwione ręcznie.</p>
+      <div class="thumbs" data-cat="portfele" data-count="11" data-label="Portfel"></div>
+    </section>
+
+    <!-- BRELOCZKI -->
+    <section class="cat">
+      <div class="cat__head">
+        <h2>Breloczki</h2>
+        <span class="cat__count">7 zdjęć</span>
+      </div>
+      <p class="cat__desc">Skórzane drobiazgi z charakterem — na klucze i nie tylko.</p>
+      <div class="thumbs" data-cat="breloczki" data-count="7" data-label="Breloczek"></div>
+    </section>
+
+    <!-- NOTATNIKI -->
+    <section class="cat">
+      <div class="cat__head">
+        <h2>Notatniki</h2>
+        <span class="cat__count">9 zdjęć</span>
+      </div>
+      <p class="cat__desc">Okładki na notatniki — szyte i barwione ręcznie.</p>
+      <div class="thumbs" data-cat="notatniki" data-count="9" data-label="Notatnik"></div>
+    </section>
+
   </main>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galeria zdjęć">
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
     <button class="lightbox__close" type="button" aria-label="Zamknij">&times;</button>
     <button class="lightbox__nav lightbox__prev" type="button" aria-label="Poprzednie">&#8249;</button>
     <img class="lightbox__img" id="lightbox-img" src="" alt="" />

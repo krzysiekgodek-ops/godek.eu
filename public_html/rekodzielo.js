@@ -1,4 +1,4 @@
-/* Godek — Pracownia Skórzana: galeria lightbox (Vanilla JS) */
+/* Godek — Pracownia Skórzana: miniaturki + lightbox (Vanilla JS) */
 (function () {
   "use strict";
 
@@ -9,19 +9,38 @@
   const btnPrev = lb.querySelector(".lightbox__prev");
   const btnNext = lb.querySelector(".lightbox__next");
 
-  let photos = [];   // ścieżki bieżącej galerii
-  let index = 0;
-  let title = "";
-
   const pad = (n) => String(n).padStart(2, "0");
 
-  function openGallery(cat, count, label) {
-    photos = [];
+  let photos = [];   // pełne zdjęcia bieżącej kategorii
+  let label = "";
+  let index = 0;
+
+  // --- Budowa miniaturek dla każdej kategorii ---
+  document.querySelectorAll(".thumbs[data-cat]").forEach((grid) => {
+    const cat = grid.dataset.cat;
+    const count = parseInt(grid.dataset.count, 10) || 0;
+    const lbl = grid.dataset.label || cat;
     for (let i = 1; i <= count; i++) {
-      photos.push(`img/skora/${cat}/${pad(i)}.webp`);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "thumb";
+      btn.setAttribute("aria-label", `${lbl} ${i} — powiększ`);
+      const img = document.createElement("img");
+      img.src = `img/skora/${cat}/t/${pad(i)}.webp`;
+      img.alt = `${lbl} ${i}`;
+      img.loading = "lazy";
+      img.decoding = "async";
+      btn.appendChild(img);
+      btn.addEventListener("click", () => openGallery(cat, count, lbl, i - 1));
+      grid.appendChild(btn);
     }
-    title = label || cat;
-    index = 0;
+  });
+
+  function openGallery(cat, count, lbl, start) {
+    photos = [];
+    for (let i = 1; i <= count; i++) photos.push(`img/skora/${cat}/${pad(i)}.webp`);
+    label = lbl;
+    index = start;
     show();
     lb.classList.add("is-open");
     lb.setAttribute("aria-hidden", "false");
@@ -31,7 +50,7 @@
 
   function show() {
     lbImg.src = photos[index];
-    lbImg.alt = `${title} — zdjęcie ${index + 1} z ${photos.length}`;
+    lbImg.alt = `${label} ${index + 1} z ${photos.length}`;
     lbCounter.textContent = `${index + 1} / ${photos.length}`;
   }
 
@@ -47,19 +66,6 @@
     document.body.style.overflow = "";
   }
 
-  // Podpięcie kafelków z galerią (mają data-cat)
-  document.querySelectorAll(".card[data-cat]").forEach((card) => {
-    const cat = card.dataset.cat;
-    const count = parseInt(card.dataset.count, 10) || 0;
-    const label = card.querySelector("h2")?.textContent || cat;
-    const activate = () => count > 0 && openGallery(cat, count, label);
-    card.addEventListener("click", activate);
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); }
-    });
-  });
-
-  // Sterowanie lightboxem
   btnClose.addEventListener("click", close);
   btnPrev.addEventListener("click", () => move(-1));
   btnNext.addEventListener("click", () => move(1));
