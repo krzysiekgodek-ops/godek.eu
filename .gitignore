@@ -12,6 +12,9 @@ Desktop.ini
 secret/
 .claude/
 
+# Oryginały zdjęć (źródła) — na serwer i tak idzie tylko public_html/
+upload/
+
 # Python
 __pycache__/
 *.pyc
