@@ -15,6 +15,9 @@ secret/
 # Oryginały zdjęć (źródła) — na serwer i tak idzie tylko public_html/
 upload/
 
+# Lokalny skrypt deployu (zawiera ścieżki serwera)
+deploy.py
+
 # Python
 __pycache__/
 *.pyc
