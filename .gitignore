@@ -18,6 +18,9 @@ upload/
 # Lokalny skrypt deployu (zawiera ścieżki serwera)
 deploy.py
 
+# Pliki binarne do pobrania (na serwer idą przez deploy.py, nie przez git)
+public_html/pliki/*.exe
+
 # Python
 __pycache__/
 *.pyc
