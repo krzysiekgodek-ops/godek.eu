@@ -141,6 +141,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
   grid-template-areas:
     "intro    intro    projects projects"
     "intro    intro    partner  leather"
+    "crmax    crmax    crmax    leather"
     "culinary culinary culinary leather"
     "culinary culinary culinary footer";
 }
@@ -148,6 +149,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--intro    { grid-area: intro; }
 .tile--projects { grid-area: projects; }
 .tile--partner  { grid-area: partner; }
+.tile--crmax    { grid-area: crmax; }
 .tile--leather  { grid-area: leather; }
 .tile--culinary { grid-area: culinary; }
 .tile--footer   { grid-area: footer; }
@@ -271,7 +273,65 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--partner__cta svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s var(--ease); }
 .tile--partner:hover .tile--partner__cta svg { transform: translate(3px, -3px); }
 
-/* ---------- 4 & 5. Kafelki z obrazem ---------- */
+/* ---------- 4. Baner crmax ---------- */
+.tile--crmax {
+  justify-content: center;
+  min-height: 220px;
+  color: #fff;
+  border: none;
+  background: linear-gradient(120deg, #1e2a5a 0%, #2f4bd8 48%, #5b8bff 100%);
+  isolation: isolate;
+}
+.tile--crmax__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 120% at 100% 0%, rgba(120,170,255,0.55) 0%, rgba(120,170,255,0) 60%),
+    radial-gradient(50% 100% at 0% 100%, rgba(30,20,90,0.6) 0%, rgba(30,20,90,0) 55%);
+}
+.tile--crmax__inner { display: flex; flex-direction: column; gap: 0.55rem; max-width: 60ch; }
+.tile--crmax__badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+}
+.tile--crmax__head { display: flex; align-items: center; gap: 12px; }
+.tile--crmax__logo {
+  display: grid; place-items: center;
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+.tile--crmax__logo svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tile--crmax h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #fff; }
+.tile--crmax__tld { font-weight: 500; opacity: 0.6; }
+.tile--crmax__slogan { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 650; }
+.tile--crmax__desc { font-size: 0.92rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+.tile--crmax__desc strong { color: #fff; font-weight: 650; }
+.tile--crmax__cta {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 0.5rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #23347a;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.tile--crmax__cta svg { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s var(--ease); }
+.tile--crmax:hover .tile--crmax__cta svg { transform: translate(3px, -3px); }
+
+/* ---------- 5 & 6. Kafelki z obrazem ---------- */
 .tile--leather, .tile--culinary { padding: 0; }
 .tile__media { position: relative; overflow: hidden; flex: 1; min-height: 160px; }
 .tile__media img {
@@ -318,6 +378,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
     grid-template-areas:
       "intro    intro"
       "projects partner"
+      "crmax    crmax"
       "leather  leather"
       "culinary culinary"
       "footer   footer";
@@ -335,6 +396,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
       "intro"
       "projects"
       "partner"
+      "crmax"
       "leather"
       "culinary"
       "footer";
