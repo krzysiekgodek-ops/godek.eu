@@ -143,6 +143,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
     "intro     intro     partner   leather"
     "crmax     crmax     crmax     leather"
     "pobieracz pobieracz pobieracz leather"
+    "pacjent   pacjent   pacjent   pacjent"
     "culinary  culinary  culinary  footer";
 }
 
@@ -151,6 +152,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--partner   { grid-area: partner; }
 .tile--crmax     { grid-area: crmax; }
 .tile--pobieracz { grid-area: pobieracz; }
+.tile--pacjent   { grid-area: pacjent; }
 .tile--leather   { grid-area: leather; }
 .tile--culinary  { grid-area: culinary; }
 .tile--footer    { grid-area: footer; }
@@ -398,6 +400,72 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--pobieracz__note svg { flex-shrink: 0; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .tile--pobieracz__note strong { color: #fff; font-weight: 650; }
 
+/* ---------- 4c. Baner Karta Zdrowia ---------- */
+.tile--pacjent {
+  justify-content: center;
+  min-height: 220px;
+  color: #fff;
+  border: none;
+  background: linear-gradient(120deg, #06231e 0%, #0d6f5b 48%, #2fc79d 100%);
+  isolation: isolate;
+}
+.tile--pacjent__glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 120% at 100% 0%, rgba(90,240,200,0.5) 0%, rgba(90,240,200,0) 60%),
+    radial-gradient(50% 100% at 0% 100%, rgba(5,45,40,0.65) 0%, rgba(5,45,40,0) 55%);
+}
+.tile--pacjent__inner { display: flex; flex-direction: column; gap: 0.55rem; max-width: 60ch; }
+.tile--pacjent__badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.28);
+}
+.tile--pacjent__head { display: flex; align-items: center; gap: 12px; }
+.tile--pacjent__logo {
+  display: grid; place-items: center;
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  flex-shrink: 0;
+}
+.tile--pacjent__logo svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tile--pacjent h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #fff; }
+.tile--pacjent__slogan { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 650; }
+.tile--pacjent__desc { font-size: 0.92rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+.tile--pacjent__desc strong { color: #fff; font-weight: 650; }
+.tile--pacjent__cta {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 0.5rem;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a5a49;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+.tile--pacjent__cta svg { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s var(--ease); }
+.tile--pacjent:hover .tile--pacjent__cta svg { transform: translate(3px, -3px); }
+.tile--pacjent__note {
+  display: flex; align-items: flex-start; gap: 7px;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.72);
+}
+.tile--pacjent__note svg { flex-shrink: 0; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tile--pacjent__note strong { color: #fff; font-weight: 650; }
+
 /* ---------- 5 & 6. Kafelki z obrazem ---------- */
 .tile--leather, .tile--culinary { padding: 0; }
 .tile__media { position: relative; overflow: hidden; flex: 1; min-height: 160px; }
@@ -447,6 +515,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
       "projects  partner"
       "crmax     crmax"
       "pobieracz pobieracz"
+      "pacjent   pacjent"
       "leather   leather"
       "culinary  culinary"
       "footer    footer";
@@ -466,6 +535,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
       "partner"
       "crmax"
       "pobieracz"
+      "pacjent"
       "leather"
       "culinary"
       "footer";
