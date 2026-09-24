@@ -334,23 +334,62 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--crmax__cta svg { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s var(--ease); }
 .tile--crmax:hover .tile--crmax__cta svg { transform: translate(3px, -3px); }
 
-/* ---------- 4b. Baner YT Pobieracz ---------- */
+/* ---------- 4b. Baner YT Pobieracz („Kinowa noc”) ---------- */
 .tile--pobieracz {
   justify-content: center;
   min-height: 220px;
+  padding-block: 48px;
   color: #fff;
   border: none;
-  background: linear-gradient(120deg, #1a0d0d 0%, #7a1414 46%, #d81f26 100%);
+  background: linear-gradient(120deg, #0e0818 0%, #2a0f55 45%, #6d28d9 100%);
   isolation: isolate;
+  container-type: inline-size;
 }
 .tile--pobieracz__glow {
   position: absolute;
   inset: 0;
   z-index: -1;
   background:
-    radial-gradient(60% 120% at 100% 0%, rgba(255,80,80,0.55) 0%, rgba(255,80,80,0) 60%),
-    radial-gradient(50% 100% at 0% 100%, rgba(60,10,10,0.65) 0%, rgba(60,10,10,0) 55%);
+    radial-gradient(55% 110% at 95% 10%, rgba(192,132,252,0.35) 0%, rgba(192,132,252,0) 60%),
+    radial-gradient(50% 100% at 0% 100%, rgba(8,4,16,0.7) 0%, rgba(8,4,16,0) 55%);
 }
+/* Perforacja taśmy filmowej u góry i na dole */
+.tile--pobieracz__glow::before,
+.tile--pobieracz__glow::after {
+  content: "";
+  position: absolute; left: 0; right: 0; height: 26px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.22) 0 12px, transparent 12px 26px) center / 100% 8px no-repeat,
+    rgba(0,0,0,0.35);
+}
+.tile--pobieracz__glow::before { top: 0; }
+.tile--pobieracz__glow::after  { bottom: 0; }
+/* Stos klatek filmu po prawej (ozdoba) */
+.tile--pobieracz__frames {
+  position: absolute;
+  right: 40px; top: 50%;
+  width: 230px; height: 170px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.tile--pobieracz__frame {
+  position: absolute; width: 150px; height: 94px;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.35);
+  display: grid; place-items: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+.tile--pobieracz__frame > svg { fill: rgba(255,255,255,0.9); }
+.tile--pobieracz__frame:nth-child(1) { left: 0;    top: 6px;  transform: rotate(-9deg); background: linear-gradient(135deg, #3b1470, #7c3aed); }
+.tile--pobieracz__frame:nth-child(2) { left: 70px; top: 0;    transform: rotate(6deg);  background: linear-gradient(135deg, #5b21b6, #c026d3); }
+.tile--pobieracz__frame:nth-child(3) { left: 36px; top: 64px; transform: rotate(-2deg); background: linear-gradient(135deg, #1e0b3d, #6d28d9); }
+.tile--pobieracz__dl {
+  position: absolute; right: -12px; bottom: -12px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #fff; display: grid; place-items: center;
+}
+.tile--pobieracz__dl svg { fill: none; stroke: #3b0f7a; stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+@container (max-width: 760px) { .tile--pobieracz__frames { display: none; } }
 .tile--pobieracz__inner { display: flex; flex-direction: column; gap: 0.55rem; max-width: 60ch; }
 .tile--pobieracz__badge {
   align-self: flex-start;
@@ -375,7 +414,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 .tile--pobieracz__logo svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tile--pobieracz h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #fff; }
 .tile--pobieracz__slogan { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 650; }
-.tile--pobieracz__desc { font-size: 0.92rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+.tile--pobieracz__desc { font-size: 0.92rem; line-height: 1.55; color: rgba(255,255,255,0.88); }
 .tile--pobieracz__desc strong { color: #fff; font-weight: 650; }
 .tile--pobieracz__cta {
   align-self: flex-start;
@@ -384,7 +423,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
   padding: 10px 18px;
   border-radius: 999px;
   background: #fff;
-  color: #a5111a;
+  color: #3b0f7a;
   font-weight: 700;
   font-size: 0.92rem;
 }
@@ -395,7 +434,7 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
   margin-top: 0.6rem;
   font-size: 0.78rem;
   line-height: 1.45;
-  color: rgba(255,255,255,0.72);
+  color: rgba(255,255,255,0.80);
 }
 .tile--pobieracz__note svg { flex-shrink: 0; margin-top: 2px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .tile--pobieracz__note strong { color: #fff; font-weight: 650; }
