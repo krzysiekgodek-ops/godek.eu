@@ -440,6 +440,14 @@ h1, h2 { line-height: 1.15; letter-spacing: -0.02em; }
 }
 .tile--pacjent__logo svg { fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tile--pacjent h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin: 0; color: #fff; }
+.tile--pacjent__title { display: flex; flex-direction: column; gap: 4px; }
+.tile--pacjent__invite {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.88);
+}
+.tile--pacjent__invite svg { flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tile--pacjent__slogan { font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 650; }
 .tile--pacjent__desc { font-size: 0.92rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
 .tile--pacjent__desc strong { color: #fff; font-weight: 650; }
