@@ -28,3 +28,6 @@ __pycache__/
 # Logi / tymczasowe
 *.log
 *.tmp
+
+# Projekty i warianty kafelków (lokalny podgląd, nie na serwer)
+projekty/
